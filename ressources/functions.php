@@ -30,7 +30,7 @@
      while ($row = fetch_array($query)) {
          echo "<div> 
                      <h4>nom: </h4>          
-                     <p>" . $row['nom'] ."</p>
+                     <p><a href= employe.php?id=" .$row['emp_id']. "> " . $row['nom'] ."</a></p>
                      <h4>prenom: </h4>           
                      <p>" . $row['prenom'] ."</p>
                      <h4>date de naissance: </h4>
@@ -42,7 +42,8 @@
                      <h4>email: </h4>
                      <p>" . $row['email']."</p>
                      <img src=".$row['photo'] . " alt=" . $row['nom']. " " . $row['prenom']."</div>";
-               //echo $employe;    
+               //echo $employe;
+                   
  }
 };
 
