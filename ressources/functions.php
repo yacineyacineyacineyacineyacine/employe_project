@@ -44,6 +44,19 @@
                      <img src=".$row['photo'] . " alt=" . $row['nom']. " " . $row['prenom']."</div>";
                //echo $employe;    
  }
-}
+};
+
+  // Get categories 
+  function get_categories(){
+      $query = query("SELECT * FROM category");
+      confirm($query);
+      echo "<div> 
+                <ul> ";
+      while ($row = fetch_array($query)) {
+          echo "<li>" . $row['cat'] . "</li>";
+        };
+             echo "</ul>
+          </div>";
+  }
 
 ?>

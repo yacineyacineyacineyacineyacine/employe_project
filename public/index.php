@@ -36,6 +36,9 @@
     <?php
         get_employies();
     ?>
+    <?php
+       get_categories();
+    ?>
     
 </body>
 </html>
