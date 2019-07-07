@@ -50,15 +50,51 @@
          </form>
     </div>
 
-    <!--Display employies -->
+    <!---------------------------------- Display employies----------------------->
     <?php
         get_employies();
     ?>
-    <!-- Display categories -->
-    <?php  echo "------------------------------all things about category-------------------------------" ?>
+    <!---------------------------------- END Display employies----------------------->
+    
+
+    <!-----------------------------------Display categories------------------------ -->
+    
+    <?php  echo "<h3>------------------------------all things about category-------------------------------</h3>" ?>
     <?php
        
        get_categories();
     ?>
+    <!----------------------------------- END Display categories-------------------------->
+
+    <!----------------------------------- mailing ---------------------------------------->
+    <?php  echo "<h3>------------------------------ mailing -------------------------------</h3>" ?>
+     <div class="mail">
+        <form action="mail.php" method="POST">
+            <label for="receiver">receiver:</label>
+            <select name="receiver" id="receiver">
+                <?php
+                $sql = "SELECT * FROM category";
+                $query = query($sql);
+                confirm(query);
+                while ($row = fetch_array($query)) {
+                   echo "<option value=" . $row['cat_id'] . ">" . $row['cat'] . "</option>"; 
+               }
+         ?>
+            </select>
+            <br>
+            <br>
+            <label for="subject">subject </label>
+            <br>
+            <br>
+            <input type="text" name="subject">
+            <br>
+            <br>
+            <textarea name="mail_text" id="" cols="30" rows="10">mail</textarea>
+            <br>
+            <br>
+            <button type="submit">send</button>
+        </form>
+     </div> 
+    <!----------------------------------- END mailing ---------------------------------------->
     
 <?php  include( TEMPLATE_FRONT . DS . "footer.php");?>

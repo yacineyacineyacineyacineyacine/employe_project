@@ -82,5 +82,8 @@
    function delete_category(){
   // some code
    }
+   function send_mail($from, $to, $mail){
+     
+   }
 
 ?>
